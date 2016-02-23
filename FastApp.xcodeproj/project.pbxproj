@@ -15,6 +15,8 @@
 		09A0AFF01C7B6BEE0042D54E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A0AFEE1C7B6BEE0042D54E /* LaunchScreen.storyboard */; };
 		09A0AFFB1C7B6BEE0042D54E /* FastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0AFFA1C7B6BEE0042D54E /* FastAppTests.swift */; };
 		09A0B0061C7B6BEE0042D54E /* FastAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0B0051C7B6BEE0042D54E /* FastAppUITests.swift */; };
+		09AC02631C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AC02611C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift */; };
+		09AC02641C7BDFDA004D69B4 /* IMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AC02621C7BDFDA004D69B4 /* IMeal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		09A0B0011C7B6BEE0042D54E /* FastAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A0B0051C7B6BEE0042D54E /* FastAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastAppUITests.swift; sourceTree = "<group>"; };
 		09A0B0071C7B6BEE0042D54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09AC02611C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IMeal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		09AC02621C7BDFDA004D69B4 /* IMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMeal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		09A0AFD61C7B6BEE0042D54E = {
 			isa = PBXGroup;
 			children = (
+				09AC02611C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift */,
+				09AC02621C7BDFDA004D69B4 /* IMeal.swift */,
 				09A0AFE11C7B6BEE0042D54E /* FastApp */,
 				09A0AFF91C7B6BEE0042D54E /* FastAppTests */,
 				09A0B0041C7B6BEE0042D54E /* FastAppUITests */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09AC02631C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift in Sources */,
 				09A0AFEB1C7B6BEE0042D54E /* FastApp.xcdatamodeld in Sources */,
+				09AC02641C7BDFDA004D69B4 /* IMeal.swift in Sources */,
 				09A0AFE51C7B6BEE0042D54E /* ViewController.swift in Sources */,
 				09A0AFE31C7B6BEE0042D54E /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GroverTech.FastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -418,6 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GroverTech.FastApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -488,6 +498,7 @@
 				09A0B00C1C7B6BEE0042D54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09A0B00D1C7B6BEE0042D54E /* Build configuration list for PBXNativeTarget "FastAppTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +507,7 @@
 				09A0B00F1C7B6BEE0042D54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09A0B0101C7B6BEE0042D54E /* Build configuration list for PBXNativeTarget "FastAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +516,7 @@
 				09A0B0121C7B6BEE0042D54E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
