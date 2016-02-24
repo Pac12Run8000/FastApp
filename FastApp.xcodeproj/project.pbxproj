@@ -17,6 +17,7 @@
 		09A0B0061C7B6BEE0042D54E /* FastAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A0B0051C7B6BEE0042D54E /* FastAppUITests.swift */; };
 		09AC02631C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AC02611C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift */; };
 		09AC02641C7BDFDA004D69B4 /* IMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AC02621C7BDFDA004D69B4 /* IMeal.swift */; };
+		09DE70F01C7C93E1006C8CE0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DE70EF1C7C93E1006C8CE0 /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		09A0B0071C7B6BEE0042D54E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09AC02611C7BDFDA004D69B4 /* IMeal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IMeal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		09AC02621C7BDFDA004D69B4 /* IMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMeal.swift; sourceTree = "<group>"; };
+		09DE70EF1C7C93E1006C8CE0 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				09A0AFE21C7B6BEE0042D54E /* AppDelegate.swift */,
 				09A0AFE41C7B6BEE0042D54E /* ViewController.swift */,
 				09A0AFE61C7B6BEE0042D54E /* Main.storyboard */,
+				09DE70EF1C7C93E1006C8CE0 /* MainTableViewController.swift */,
 				09A0AFEC1C7B6BEE0042D54E /* Assets.xcassets */,
 				09A0AFEE1C7B6BEE0042D54E /* LaunchScreen.storyboard */,
 				09A0AFF11C7B6BEE0042D54E /* Info.plist */,
@@ -269,6 +272,7 @@
 				09A0AFEB1C7B6BEE0042D54E /* FastApp.xcdatamodeld in Sources */,
 				09AC02641C7BDFDA004D69B4 /* IMeal.swift in Sources */,
 				09A0AFE51C7B6BEE0042D54E /* ViewController.swift in Sources */,
+				09DE70F01C7C93E1006C8CE0 /* MainTableViewController.swift in Sources */,
 				09A0AFE31C7B6BEE0042D54E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
