@@ -15,22 +15,44 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var myMeal:IMeal? = nil
     
     let fastTypesArray:[String] = ["16 hr fast", "24 hr fast", "48 hr fast"]
+    var fastTypeRow:Int = Int()
+    var strFastType:String = String()
 
     @IBOutlet weak var txtTitleOutlet: UITextField!
     @IBOutlet weak var txtDescriptionOutlet: UITextView!
     @IBOutlet weak var pickerFastType: UIPickerView!
     @IBOutlet weak var lblTimeDisplay: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.pickerFastType.selectRow(0, inComponent: 1, animated: false)
         if (myMeal != nil) {
+            
+           
             self.txtTitleOutlet.text = myMeal?.mealName
             self.txtDescriptionOutlet.text = myMeal?.mealDesc
             self.lblTimeDisplay.text = myMeal?.mealInterval
-        }
-        
-        
-        
+            strFastType = self.lblTimeDisplay.text!
+            /**
+            switch(strFastType) {
+                case "16 hr fast":
+                    fastTypeRow = 0
+                break
+                case "24 hr fast":
+                    fastTypeRow = 1
+                break
+                case "48 hr fast":
+                    fastTypeRow = 2
+                break
+            default:
+                fastTypeRow = 0
+                break
+
+            }
+            **/
+                    }
         self.txtTitleOutlet.layer.borderColor = UIColor.blackColor().CGColor
         self.txtDescriptionOutlet.layer.borderColor = UIColor.blackColor().CGColor
         self.txtDescriptionOutlet.layer.borderWidth = 1
@@ -38,6 +60,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.pickerFastType.delegate = self
         self.pickerFastType.dataSource = self
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (myMeal != nil) {
+            if (segue.identifier == "setTimer") {
+                let tVC:TimerViewController = segue.destinationViewController as! TimerViewController
+                tVC.strInterval = (myMeal?.mealInterval)!
+                
+            }
+        }
+    }
+ 
+    
+    
     @IBAction func btnStartSave(sender: AnyObject) {
         if (myMeal != nil) {
             self.editMealItem()
@@ -71,11 +106,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     @IBAction func btnReset(sender: AnyObject) {
-        self.lblTimeDisplay.text = "00:00:00"
+        
     }
     @IBAction func backButton(sender: AnyObject) {
         dismissVC()
     }
+   
     
     func dismissVC() {
         navigationController?.popViewControllerAnimated(true)

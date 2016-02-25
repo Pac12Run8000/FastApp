@@ -122,9 +122,9 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="reset timer" id="nRu-g7-sSf">
+                        <barButtonItem title="+ Timer" id="nRu-g7-sSf">
                             <connections>
-                                <action selector="btnReset:" destination="BYZ-38-t0r" id="HBc-RQ-BgX"/>
+                                <segue destination="rtw-zn-4TB" kind="show" identifier="setTimer" id="tfv-Pi-GdK"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -134,7 +134,7 @@
                                 <action selector="backButton:" destination="BYZ-38-t0r" id="hqB-FR-rjr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="9Wo-MZ-9IV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Wo-MZ-9IV">
                             <connections>
                                 <action selector="btnStartSave:" destination="BYZ-38-t0r" id="wtT-oa-5aa"/>
                             </connections>
@@ -150,6 +150,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1246" y="242"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="qug-Kv-4oq">
+            <objects>
+                <viewController id="rtw-zn-4TB" customClass="TimerViewController" customModule="FastApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KBu-b2-dsr"/>
+                        <viewControllerLayoutGuide type="bottom" id="MnA-cb-BQ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ei1-FL-YC3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuY-Gr-6TC">
+                                <rect key="frame" x="20" y="64" width="560" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qaI-Ge-Y7X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KuY-Gr-6TC" secondAttribute="trailing" id="4ZD-f7-X7e"/>
+                            <constraint firstItem="KuY-Gr-6TC" firstAttribute="top" secondItem="KBu-b2-dsr" secondAttribute="bottom" id="T0u-Eq-2gZ"/>
+                            <constraint firstItem="KuY-Gr-6TC" firstAttribute="leading" secondItem="ei1-FL-YC3" secondAttribute="leadingMargin" id="c3N-K3-CNG"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="lblTimer" destination="KuY-Gr-6TC" id="tWS-RN-KFZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNw-i6-f3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246" y="1005"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3V-ed-Mz5">
@@ -175,6 +213,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rCw-Kj-TW6"/>
+        <segue reference="fyP-1i-HKd"/>
     </inferredMetricsTieBreakers>
 </document>
