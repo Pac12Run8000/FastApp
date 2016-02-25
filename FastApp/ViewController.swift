@@ -34,7 +34,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lblSaved.alpha = 0
-        //self.pickerFastType.selectRow(0, inComponent: 1, animated: false)
         if (myMeal != nil) {
             
            
@@ -42,24 +41,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.txtDescriptionOutlet.text = myMeal?.mealDesc
             self.lblTimeDisplay.text = myMeal?.mealInterval
             strFastType = self.lblTimeDisplay.text!
-            /**
-            switch(strFastType) {
-                case "16 hr fast":
-                    fastTypeRow = 0
-                break
-                case "24 hr fast":
-                    fastTypeRow = 1
-                break
-                case "48 hr fast":
-                    fastTypeRow = 2
-                break
-            default:
-                fastTypeRow = 0
-                break
-
-            }
-            **/
-                    }
+            
+        }
         self.txtTitleOutlet.layer.borderColor = UIColor.blackColor().CGColor
         self.txtDescriptionOutlet.layer.borderColor = UIColor.blackColor().CGColor
         self.txtDescriptionOutlet.layer.borderWidth = 1
@@ -72,8 +55,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if (myMeal != nil) {
             if (segue.identifier == "setTimer") {
                 let tVC:TimerViewController = segue.destinationViewController as! TimerViewController
-                tVC.strInterval = (myMeal?.mealInterval)!
-                
+                tVC.vMeal = myMeal!
             }
         }
     }

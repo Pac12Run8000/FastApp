@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TimerViewController: UIViewController {
     
     @IBOutlet weak var lblTimer: UILabel!
     
-    var strInterval:String = String()
+    var vMeal:IMeal? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lblTimer.text = strInterval
-        // Do any additional setup after loading the view.
+        if (vMeal != nil) {
+        self.lblTimer.text = vMeal!.mealInterval
+        }
+       
     }
 
     override func didReceiveMemoryWarning() {
