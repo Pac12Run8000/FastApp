@@ -104,15 +104,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIN-Ml-fUi">
+                                <rect key="frame" x="261.5" y="429" width="77" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lFA-5K-N7Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.071536393130000001" blue="0.13185499370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PVb-4A-3NR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="05m-Hc-kGC"/>
+                            <constraint firstItem="BIN-Ml-fUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ci-Hp-KN6"/>
                             <constraint firstItem="sem-0U-Dzh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="4Eo-A1-2HE"/>
                             <constraint firstItem="sem-0U-Dzh" firstAttribute="top" secondItem="SbB-SZ-iQY" secondAttribute="bottom" id="BUo-Oj-pIl"/>
                             <constraint firstItem="ng3-h5-Bon" firstAttribute="top" secondItem="PVb-4A-3NR" secondAttribute="bottom" constant="10" id="Jzu-dO-n4A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SbB-SZ-iQY" secondAttribute="trailing" constant="-20" id="M5F-3U-eBM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ng3-h5-Bon" secondAttribute="trailing" id="TkJ-5G-dCf"/>
+                            <constraint firstItem="BIN-Ml-fUi" firstAttribute="top" secondItem="sem-0U-Dzh" secondAttribute="bottom" constant="5" id="W5H-u1-8tz"/>
                             <constraint firstItem="SbB-SZ-iQY" firstAttribute="top" secondItem="ng3-h5-Bon" secondAttribute="bottom" id="dTB-7Q-IO8"/>
                             <constraint firstItem="SbB-SZ-iQY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f4P-1x-NPu"/>
                             <constraint firstItem="PVb-4A-3NR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hfh-XQ-R3w"/>
@@ -141,6 +152,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblSaved" destination="BIN-Ml-fUi" id="CCR-Po-Wqe"/>
                         <outlet property="lblTimeDisplay" destination="sem-0U-Dzh" id="nl7-8q-5J3"/>
                         <outlet property="pickerFastType" destination="SbB-SZ-iQY" id="jMn-9l-57g"/>
                         <outlet property="txtDescriptionOutlet" destination="ng3-h5-Bon" id="D3p-ZA-9t8"/>
@@ -149,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="242"/>
+            <point key="canvasLocation" x="1312" y="227"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="qug-Kv-4oq">

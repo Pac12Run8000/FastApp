@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -22,11 +23,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var txtDescriptionOutlet: UITextView!
     @IBOutlet weak var pickerFastType: UIPickerView!
     @IBOutlet weak var lblTimeDisplay: UILabel!
+    @IBOutlet weak var lblSaved: UILabel!
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.lblSaved.alpha = 0
         //self.pickerFastType.selectRow(0, inComponent: 1, animated: false)
         if (myMeal != nil) {
             
@@ -78,6 +85,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.editMealItem()
         } else {
             self.newMealItem()
+        }
+            self.lblSaved.alpha = 1
+        UIView.animateWithDuration(2) { () -> Void in
+            self.lblSaved.alpha = 0
         }
     }
     func newMealItem() {
