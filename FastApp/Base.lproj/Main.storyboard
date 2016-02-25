@@ -58,7 +58,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkk-MN-SBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469" y="352"/>
+            <point key="canvasLocation" x="607" y="44"/>
         </scene>
         <!--Meal Details-->
         <scene sceneID="tne-QT-ifu">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="227"/>
+            <point key="canvasLocation" x="1352" y="-135"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="qug-Kv-4oq">
@@ -176,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuY-Gr-6TC">
-                                <rect key="frame" x="20" y="64" width="560" height="100"/>
+                                <rect key="frame" x="20" y="74" width="560" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="qaI-Ge-Y7X"/>
                                 </constraints>
@@ -184,22 +184,52 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWA-EC-gJi">
+                                <rect key="frame" x="30" y="194" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="q9u-wr-VIs"/>
+                                    <constraint firstAttribute="height" constant="100" id="tow-sO-ABg"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="btnStartStopPressed:" destination="rtw-zn-4TB" eventType="touchUpInside" id="ZVq-dm-ybp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8D-k7-pkU">
+                                <rect key="frame" x="470" y="194" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="1wf-UB-XDe"/>
+                                    <constraint firstAttribute="height" constant="100" id="AZQ-LB-HCm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="btt-cB-JJ6"/>
+                                    <constraint firstAttribute="width" constant="100" id="nj3-DL-s0I"/>
+                                </constraints>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="btnResetPressed:" destination="rtw-zn-4TB" eventType="touchUpInside" id="6sp-1u-kGm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="NWA-EC-gJi" firstAttribute="leading" secondItem="ei1-FL-YC3" secondAttribute="leadingMargin" constant="10" id="1gl-2e-0c0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KuY-Gr-6TC" secondAttribute="trailing" id="4ZD-f7-X7e"/>
-                            <constraint firstItem="KuY-Gr-6TC" firstAttribute="top" secondItem="KBu-b2-dsr" secondAttribute="bottom" id="T0u-Eq-2gZ"/>
+                            <constraint firstItem="NWA-EC-gJi" firstAttribute="top" secondItem="KuY-Gr-6TC" secondAttribute="bottom" constant="20" id="6dp-Y0-lHd"/>
+                            <constraint firstItem="X8D-k7-pkU" firstAttribute="top" secondItem="KuY-Gr-6TC" secondAttribute="bottom" constant="20" id="Oyv-uQ-6F3"/>
+                            <constraint firstItem="KuY-Gr-6TC" firstAttribute="top" secondItem="KBu-b2-dsr" secondAttribute="bottom" constant="10" id="T0u-Eq-2gZ"/>
                             <constraint firstItem="KuY-Gr-6TC" firstAttribute="leading" secondItem="ei1-FL-YC3" secondAttribute="leadingMargin" id="c3N-K3-CNG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X8D-k7-pkU" secondAttribute="trailing" constant="10" id="t6e-Gd-jo6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="btnReset" destination="X8D-k7-pkU" id="VND-IE-uZJ"/>
+                        <outlet property="btnStartStop" destination="NWA-EC-gJi" id="rzO-eo-UC3"/>
                         <outlet property="lblTimer" destination="KuY-Gr-6TC" id="tWS-RN-KFZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNw-i6-f3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="1005"/>
+            <point key="canvasLocation" x="1151" y="521"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3V-ed-Mz5">
