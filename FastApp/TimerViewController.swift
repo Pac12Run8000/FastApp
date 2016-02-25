@@ -16,9 +16,10 @@ class TimerViewController: UIViewController {
     var seconds:Int = 0
     var fractions:Int = 0
     var hours:Int = 0
+   
     
     var startStopWatch:Bool = true
-    var restInterval:Int = Int()
+    var restInterval:Int = 0
     var stopWatchString:String = ""
     
     
@@ -32,7 +33,9 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (vMeal != nil) {
-            //self.lblTimer.text = "\(getRestInterval(vMeal!))"
+            restInterval = self.getRestInterval(vMeal!)
+            self.lblTimer.text = "00:00:00.00"
+        } else {
             self.lblTimer.text = "00:00:00.00"
         }
         self.lblTimer.layer.borderWidth = 3
@@ -70,33 +73,38 @@ class TimerViewController: UIViewController {
         } else {
             timer.invalidate()
             startStopWatch = true
-            self.btnStartStop.setTitle("Stop", forState: UIControlState.Normal)
+            self.btnStartStop.setTitle("Start", forState: UIControlState.Normal)
         }
     }
     
     func updateTimer() {
-        fractions += 1
-        if (fractions == 100) {
-            seconds += 1
-            fractions = 0
+        if (vMeal != nil) {
+            fractions += 1
+            if (fractions == 100) {
+                seconds += 1
+                fractions = 0
+            }
+            if (seconds == 60) {
+                minutes += 1
+                seconds = 0
+            }
+        
+            let fractionString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
+            let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+            let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+            let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
+        
+            self.lblTimer.text = "\(hoursString):\(minutesString):\(secondsString).\(fractionString)"
         }
-        if (seconds == 60) {
-            minutes += 1
-            seconds = 0
-        }
-        
-        let fractionString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
-        let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-        let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
-        
-        self.lblTimer.text = "\(hoursString):\(minutesString):\(secondsString).\(fractionString)"
-        
-        
-        
     }
     
     @IBAction func btnResetPressed(sender: AnyObject) {
+        self.timer.invalidate()
+        fractions = 0
+        seconds = 0
+        minutes = 0
+        hours = 0
+        self.lblTimer.text = "00:00:00.00"
     }
     
     override func didReceiveMemoryWarning() {
