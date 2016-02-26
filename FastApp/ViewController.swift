@@ -93,7 +93,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         myMeal?.mealDesc = txtDescriptionOutlet.text
         myMeal?.mealInterval = lblTimeDisplay.text
         do {
-            try context.save() } catch {
+            try context.save()
+        
+        } catch {
                 print(error)
                 return
         }

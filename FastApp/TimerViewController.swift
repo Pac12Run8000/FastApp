@@ -5,7 +5,7 @@
 //  Created by Michelle Grover on 2/25/16.
 //  Copyright © 2016 Michelle Grover. All rights reserved.
 //
-
+import AVFoundation
 import UIKit
 import CoreData
 
@@ -16,12 +16,12 @@ class TimerViewController: UIViewController {
     var seconds:Int = 0
     var fractions:Int = 0
     var hours:Int = 0
-   
+    var restInterval:Int = 0
     
     var startStopWatch:Bool = true
-    var restInterval:Int = 0
     var stopWatchString:String = ""
     
+    var audioPlayer: AVAudioPlayer!
     
     
     @IBOutlet weak var lblTimer: UILabel!
@@ -33,7 +33,7 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (vMeal != nil) {
-            restInterval = self.getRestInterval(vMeal!)
+            //restInterval = self.getRestInterval(vMeal!)
             self.lblTimer.text = "00:00:00.00"
         } else {
             self.lblTimer.text = "00:00:00.00"
@@ -60,6 +60,7 @@ class TimerViewController: UIViewController {
             returnVal = 48
             break
         default:
+            returnVal = 16
             break
         }
         return returnVal
@@ -78,7 +79,8 @@ class TimerViewController: UIViewController {
     }
     
     func updateTimer() {
-        if (vMeal != nil) {
+        var defaultValForNil:Int = 16
+        //if (vMeal != nil) {
             fractions += 1
             if (fractions == 100) {
                 seconds += 1
@@ -88,6 +90,38 @@ class TimerViewController: UIViewController {
                 minutes += 1
                 seconds = 0
             }
+            if (minutes == 60) {
+                hours += 1
+                minutes = 0
+            }
+            if (vMeal != nil) {
+                defaultValForNil = getRestInterval(vMeal!)
+            } else {
+                defaultValForNil = 16
+            }
+            
+            if (hours == defaultValForNil) {
+                timer.invalidate()
+                self.playVes()
+                let myAlert = UIAlertController(title: "Fasting Alert", message: "\(getRestInterval(vMeal!)) hours have passed. Times Up!", preferredStyle: UIAlertControllerStyle.Alert)
+                let myAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: { (ACTION) -> Void in
+                   // alert functionality
+                    if (self.startStopWatch == false) {
+                        self.btnStartStop.setTitle("Start", forState: UIControlState.Normal)
+                        self.startStopWatch = true
+                        self.fractions = 0
+                        self.seconds = 0
+                        self.minutes = 0
+                        self.hours = 0
+                        self.lblTimer.text = "00:00:00.00"
+                        
+                        self.audioPlayer.stop()
+                    }
+                   
+                })
+                myAlert.addAction(myAction)
+                self.presentViewController(myAlert, animated: true, completion: nil)
+            }
         
             let fractionString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
             let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
@@ -95,11 +129,21 @@ class TimerViewController: UIViewController {
             let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
         
             self.lblTimer.text = "\(hoursString):\(minutesString):\(secondsString).\(fractionString)"
+        //}
+    }
+    
+    //Audio issues
+    func playVes() {
+        do {
+            self.audioPlayer =  try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("72244__benboncan__alarm", ofType: "wav")!))
+            self.audioPlayer.play()
+            
+        } catch {
+            print("Error")
         }
     }
     
     @IBAction func btnResetPressed(sender: AnyObject) {
-        self.timer.invalidate()
         fractions = 0
         seconds = 0
         minutes = 0
